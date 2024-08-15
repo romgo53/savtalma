@@ -28,11 +28,61 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+body, html, #root, .App {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.background-image {
+  background-image: url('./assets/desktop.jpg'); /* Replace with your image URL */
+  background-size: cover; /* Ensures the image covers the background */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  padding: 20px; /* Some padding to prevent content from touching the edges */
+}
+
+@media (max-width: 768px) { /* For tablets and smaller devices */
+  .background-image {
+    background-image: url('./assets/tablet.jpg'); /* Replace with your image URL */
+    background-size: 95%;
+    background-position: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .content h1 {
+    font-size: 2rem; /* Smaller heading font for smaller screens */
+  }
+
+  .content p {
+    font-size: 1rem; /* Smaller paragraph font for smaller screens */
+  }
+}
+
+@media (max-width: 480px) { /* For phone screens */
+  .background-image {
+    background-size: 95%;
+    background-image: url('./assets/mobile.jpg'); /* Replace with your image URL */
+    background-position: center;
+    /* background-color: green; */
+
+  }
+
+  .content h1 {
+    font-size: 1.5rem; /* Further reduction in font size for small screens */
+  }
+
+  .content p {
+    font-size: 0.875rem; /* Adjust paragraph font size */
   }
 }
